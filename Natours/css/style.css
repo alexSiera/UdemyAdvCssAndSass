@@ -6,6 +6,19 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+/** colors variables **/
+:root {
+    --gray-text-color: #777;
+    --black-shadow-color: rgba(0,0,0,.2);
+    --btn-after-white-color: #fff;
+    --light-green-color: rgba(126, 213, 111, 0.8);
+    --medium-green-color: #55c57a;
+    --dark-green-color: rgba(40, 180, 133, 0.8);
+}
+/** end colors variables **/
+
+
+
 /** basic styles **/
 * {
     margin: 0;
@@ -17,7 +30,7 @@ body {
     font-weight: 400;
     font-size: 16px;
     line-height: 1.7;
-    color: #777;
+    color: var(--gray-text-color, #777);
     padding: 30px;
 }
 /** end basic styles **/
@@ -25,8 +38,8 @@ body {
 .header {
     height: 95vh;
     background-image: linear-gradient(
-        to right bottom, rgba(126, 213, 111, 0.8),
-        rgba(40, 180, 133, 0.8)),
+        to right bottom, var(--light-green-color,rgba(126, 213, 111, 0.8)),
+        var(--light-green-color,rgba(40, 180, 133, 0.8))),
         url(../img/hero.jpg);
     background-size: cover; 
     background-position: top;
@@ -77,7 +90,56 @@ body {
     animation-duration: 1s;
     animation-timing-function: ease-out;
 }
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block;
+    margin-top: 40px;
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+
+}
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 10px var(--black-shadow-color, rgba(0,0,0, .2));
+}
+.btn:active {
+    transform: translateY(-1px);
+}
+.btn-white {
+    background-color:#fff;
+    color: var(--gray-text-color, #777);
+}
+.btn::after {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+
+}
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+.btn-white::after {
+    background-color: var(--btn-after-white-color, #fff);
+}
+.btn-animated {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
 /** end heading-section **/
+
+
 
 /** animations **/
 @keyframes moveInLeft {
@@ -104,6 +166,16 @@ body {
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+@keyframes moveInBottom{
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 /** end animations **/
