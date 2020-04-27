@@ -6,13 +6,23 @@ Medium green: #55c57a
 Dark green: #28b485
 
 */
+
 /** colors variables **/
 $color-primary: #55c57a;
 $color-primary-light: #7ed56f;
 $color-primary-dark: #28b485;
 $color-white: #fff;
 $color-black: #000;
+/** end colors variables **/
 
+/** grid variables **/
+$grid-width: 114rem;
+$gutter-vertical: 8rem;
+$gutter-horizontal: 8rem;
+
+/** end grid variables **/
+
+/** CSS variables **/
 :root {
   --gray-text-color: #777;
   --black-shadow-color: rgba($color-black,.2);
@@ -21,4 +31,4 @@ $color-black: #000;
   --medium-green-color: #55c57a;
   --dark-green-color: rgba(40, 180, 133, 0.8);
 }
-/** end colors variables **/
+/** end CSS variables **/
