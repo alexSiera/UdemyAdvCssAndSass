@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "compile:sass": "node-sass --include-path scss sass/main.scss css/style.css",
+    "watch-scss": "nodemon -e scss -x \"npm run compile:sass\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "node-sass": "^4.14.0"
+    "node-sass": "^4.14.0",
+    "nodemon": "^2.0.3"
   }
 }
