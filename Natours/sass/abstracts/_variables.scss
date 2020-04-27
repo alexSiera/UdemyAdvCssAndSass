@@ -1,0 +1,24 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+/** colors variables **/
+$color-primary: #55c57a;
+$color-primary-light: #7ed56f;
+$color-primary-dark: #28b485;
+$color-white: #fff;
+$color-black: #000;
+
+:root {
+  --gray-text-color: #777;
+  --black-shadow-color: rgba($color-black,.2);
+  --btn-after-white-color: #fff;
+  --light-green-color: rgba(126, 213, 111, 0.8);
+  --medium-green-color: #55c57a;
+  --dark-green-color: rgba(40, 180, 133, 0.8);
+}
+/** end colors variables **/
