@@ -9,7 +9,7 @@ Dark green: #28b485
 /** colors variables **/
 :root {
   --gray-text-color: #777;
-  --black-shadow-color: rgba(0,0,0,.2);
+  --black-shadow-color: rgba($color-black,.2);
   --btn-after-white-color: #fff;
   --light-green-color: rgba(126, 213, 111, 0.8);
   --medium-green-color: #55c57a;
@@ -43,52 +43,46 @@ body {
   background-position: top;
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  left: 4rem;
-  top: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
+  .header__logo {
+    height: 3.5rem; }
+    .header__logo-box {
+      position: absolute;
+      left: 4rem;
+      top: 4rem; }
+  .header__text-box {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
 
 /** heading-section **/
-.header__text-box {
-  position: absolute;
-  left: 50%;
-  top: 40%;
-  transform: translate(-50%, -50%);
-  text-align: center; }
-
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
   backface-visibility: hidden; }
+  .heading-primary--main {
+    letter-spacing: 3.5rem;
+    font-size: 6rem;
+    font-weight: 400;
+    display: block;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /* 
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+    */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation-name: moveInRight;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
 
-.heading-primary--main {
-  letter-spacing: 3.5rem;
-  font-size: 6rem;
-  font-weight: 400;
-  display: block;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-  /* 
-      animation-delay: 3s;
-      animation-iteration-count: 3;
-  */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation-name: moveInRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; }
-
-.btn:link,
-.btn:visited {
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -102,14 +96,13 @@ body {
 .btn:hover {
   transform: translateY(-0.3rem);
   box-shadow: 0 0.5rem 1rem var(--black-shadow-color, rgba(0, 0, 0, 0.2)); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
 
 .btn:active {
   transform: translateY(-0.1rem);
   box-shadow: 0 0.5rem 1rem var(--black-shadow-color, rgba(0, 0, 0, 0.2)); }
-
-.btn--white {
-  background-color: #fff;
-  color: var(--gray-text-color, #777); }
 
 .btn::after {
   content: '';
@@ -123,12 +116,11 @@ body {
   z-index: -1;
   transition: all .4s; }
 
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0; }
-
-.btn--white::after {
-  background-color: var(--btn-after-white-color, #fff); }
+.btn--white {
+  background-color: #fff;
+  color: var(--gray-text-color, #777); }
+  .btn--white::after {
+    background-color: var(--btn-after-white-color, #fff); }
 
 .btn--animated {
   animation: moveInBottom .5s ease-out .75s;
