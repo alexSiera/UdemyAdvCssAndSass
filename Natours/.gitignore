@@ -7,7 +7,7 @@
 /css/style.css
 # testing
 /coverage
-./idea
+.idea/
 # production
 /build
 
